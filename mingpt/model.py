@@ -13,6 +13,7 @@ import logging
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
+from aft_pytorch import AFTFull
 
 logger = logging.getLogger(__name__)
 
@@ -85,7 +86,7 @@ class Block(nn.Module):
         super().__init__()
         self.ln1 = nn.LayerNorm(config.n_embd)
         self.ln2 = nn.LayerNorm(config.n_embd)
-        self.attn = CausalSelfAttention(config)
+        self.attn = AFTFull(max_seqlen=20, dim=512, hidden_dim=64)
         self.mlp = nn.Sequential(
             nn.Linear(config.n_embd, 4 * config.n_embd),
             nn.GELU(),
