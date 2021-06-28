@@ -1,7 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import torch, torchvision
-from mingpt import *
+
+from model import *
+from utils import *
+from trainer import *
 
 """
 Credits to Andrej Karpathy for his min-GPT implementation. This repo
