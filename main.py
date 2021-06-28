@@ -43,7 +43,7 @@ def prepare_dataset():
     train_dataset = ImageDataset(train_data, C)
     test_dataset = ImageDataset(test_data, C)
     
-    return train_dataset, train_data, test_dataset, test_data
+    return train_dataset, train_data, test_dataset, test_data, C
 
 def get_model(train_dataset, train_data, test_dataset, test_data):
     mconf = GPTConfig(
