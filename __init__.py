@@ -1,3 +1,3 @@
-from mingpt.model import *
-from mingpt.trainer import *
-from mingpt.utils import *
+from minGPT.model import *
+from minGPT.trainer import *
+from minGPT.utils import *
