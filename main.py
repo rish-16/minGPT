@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import torch, torchvision
 
 from model import *
-from utils import *
 from trainer import *
+from utils import *
 
 """
 Credits to Andrej Karpathy for his min-GPT implementation. This repo
