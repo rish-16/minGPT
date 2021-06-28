@@ -37,7 +37,6 @@ class TrainerConfig:
             setattr(self, k, v)
 
 class Trainer:
-
     def __init__(self, model, train_dataset, test_dataset, config):
         self.model = model
         self.train_dataset = train_dataset
@@ -45,7 +44,7 @@ class Trainer:
         self.config = config
 
         # take over whatever gpus are on the system
-        self.device = 'cpu'
+        self.device = "cpu"
         if torch.cuda.is_available():
             self.device = torch.cuda.current_device()
             self.model = torch.nn.DataParallel(self.model).to(self.device)

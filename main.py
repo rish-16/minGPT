@@ -70,11 +70,18 @@ def get_model(train_dataset, train_data, test_dataset, test_data):
     train_epochs = 20 # todo run a bigger model and longer, this is tiny            
 
     # initialize a trainer instance and kick off training
-    tconf = TrainerConfig(max_epochs=train_epochs, batch_size=16*8, learning_rate=3e-3,
-                        betas = (0.9, 0.95), weight_decay=0,
-                        lr_decay=True, warmup_tokens=tokens_per_epoch, final_tokens=train_epochs*tokens_per_epoch,
-                        ckpt_path='cifar10_model.pt',
-                        num_workers=8)
+    tconf = TrainerConfig(
+                max_epochs=train_epochs, 
+                batch_size=16*8, 
+                learning_rate=3e-3,
+                betas = (0.9, 0.95), 
+                weight_decay=0,
+                lr_decay=True, 
+                warmup_tokens=tokens_per_epoch, 
+                final_tokens=train_epochs*tokens_per_epoch,
+                ckpt_path='cifar10_model.pt',
+                num_workers=8)
+    
     trainer = Trainer(model, train_dataset, test_dataset, tconf)
     trainer.train()
 
