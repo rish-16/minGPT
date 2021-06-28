@@ -2,9 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import torch, torchvision
 
-from model import *
-from trainer import *
-from utils import *
+from minGPT.model import *
+from minGPT.trainer import *
+from minGPT.utils import *
 
 """
 Credits to Andrej Karpathy for his min-GPT implementation. This repo
